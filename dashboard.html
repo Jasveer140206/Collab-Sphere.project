@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collab-Sphere - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/dashboard.js" defer></script>
+</head>
+<body class="dark">
+    <nav class="navbar">
+        <div class="brand">Collab-Sphere</div>
+        <div class="nav-items">
+            <button id="darkModeToggle">🌓</button>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="search-add">
+            <input type="text" id="searchInput" placeholder="Search projects...">
+            <button id="addProjectBtn">+ Add Project</button>
+        </div>
+
+        <div class="projects-grid" id="projectsContainer">
+            <!-- Projects will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Add Project Modal -->
+    <div class="modal" id="addProjectModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Project</h2>
+            <form id="projectForm">
+                <input type="text" id="projectTitle" placeholder="Project Title" required>
+                <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+                <button type="submit">Submit Project</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
